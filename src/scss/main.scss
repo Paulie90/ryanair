@@ -1,0 +1,13 @@
+input[type='date'] {
+  // -moz-appearance: textfield;
+
+  &::-webkit-inner-spin-button {
+    // display: none;
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+// datalist{
+//   display: block;
+// }

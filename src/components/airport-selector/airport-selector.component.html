@@ -1,0 +1,5 @@
+
+  <input class="input" type="text" placeholder="Select airport" list="airport-datalist" ng-model="query" ng-change="$ctrl.inputChangeHandler(query)">
+  <datalist id="airport-datalist">
+    <option ng-repeat="airport in $ctrl.availableAirports" value="{{airport.name}}" />
+  </datalist>

@@ -1,0 +1,1 @@
+export const MOMENT_DISPLAY_DATE_FORMAT = 'YYYY-MM-DD';
