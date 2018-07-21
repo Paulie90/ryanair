@@ -1,6 +1,8 @@
 @import './variables';
 
 $primary: $ryanair-blue;
+$info: $ryanair-light-blue;
+$warning: $ryanair-yellow;
 
 @import '~bulma/bulma.sass';
 @import './overrides/overrides.scss'

@@ -1,22 +1,16 @@
-<div class="control is-horizontal">
-  <div class="control-label">
-    <label class="label">
-      Fly out:
-    </label>
-  </div>
-
-  <div class="control">
-    <date-selector on-date-change="$ctrl.startDateChanged(date)" max-date="$ctrl.maxDate">
-    </date-selector>
-  </div>
-
-  <div class="control-label">
-    <label class="label">
-      Fly back:
-    </label>
-  </div>
-  <div class="control">
-    <date-selector on-date-change="$ctrl.endDateChanged(date)" min-date="$ctrl.minDate">
-    </date-selector>
+<div class="columns">
+  <div class="column is-3 is-offset-3">
+    <div class="field has-addons">
+      <div class="control">
+        <p class="help has-text-white">Fly out</p>
+        <date-selector on-date-change="$ctrl.startDateChanged(date)" max-date="$ctrl.maxDate">
+        </date-selector>
+      </div>
+      <div class="control">
+        <p class="help has-text-white">Fly back</p>
+        <date-selector on-date-change="$ctrl.endDateChanged(date)" min-date="$ctrl.minDate">
+        </date-selector>
+      </div>
+    </div>
   </div>
 </div>
