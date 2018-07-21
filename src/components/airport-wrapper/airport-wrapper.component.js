@@ -4,7 +4,7 @@ import controller from './airport-wrapper.controller';
 export const AirportWrapperComponent = {
   bindings: {
     airports: '<',
-    onAirportSelect: '&'
+    onAirportsSet: '&'
   },
   template,
   controller

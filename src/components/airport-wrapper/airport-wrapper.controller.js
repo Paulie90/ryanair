@@ -1,9 +1,34 @@
 export default class AirportWrapperController {
-  selectedStartAirportHandler(airport) {
+  $onInit() {
+    this.startAirports = [...this.airports];
+    this.endAirports = [...this.airports];
+  }
 
+  selectedStartAirportHandler(airport) {
+    this.startAirport = airport;
+
+    this.endAirports = [...this.airports];
+    this.endAirports = this.endAirports.filter(port => port.name !== airport.name);
+
+    if (this.endAirport) {
+      this.onAirportsSet({
+        startAirport: this.startAirport,
+        endAirport: this.endAirport
+      });
+    }
   }
 
   selectedEndAirportHandler(airport) {
-    // TODO nowa lista lotnisk , usuwać wybrane w start
+    this.endAirport = airport;
+
+    this.startAirports = [...this.airports];
+    this.startAirports = this.endAirports.filter(port => port !== airport);
+
+    if (this.startAirport) {
+      this.onAirportsSet({
+        startAirport: this.startAirport,
+        endAirport: this.endAirport
+      });
+    }
   }
 }

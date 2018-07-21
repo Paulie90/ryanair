@@ -1,5 +1,13 @@
+<input class="input" type="text" placeholder="Select airport" ng-focus="$ctrl.isDropdownOpen=true" ng-model="$ctrl.query" click-outside="$ctrl.isDropdownOpen=false">
 
-  <input class="input" type="text" placeholder="Select airport" list="airport-datalist" ng-model="query" ng-change="$ctrl.inputChangeHandler(query)">
-  <datalist id="airport-datalist">
-    <option ng-repeat="airport in $ctrl.availableAirports" value="{{airport.name}}" />
-  </datalist>
+<div class="dropdown" ng-class="{ 'is-active': $ctrl.isDropdownOpen }" click-outside="$ctrl.isDropdownOpen=false">
+  <div class="dropdown-menu">
+    <div class="dropdown-content">
+      <a class="dropdown-item" ng-repeat="airport in filteredAirports = ($ctrl.airports | filter: $ctrl.filterAirports($ctrl.query) | limitTo: 15) track by $index"
+        ng-click="$ctrl.inputChangeHandler(airport)">
+        {{airport.name}}
+      </a>
+      <p class="dropdown-item" ng-show="filteredAirports.length === 0">No matches...</p>
+    </div>
+  </div>
+</div>

@@ -1,13 +1,15 @@
-<div class="control-label">
-  <label class="label">Select airport:</label>
-</div>
-<div class="control">
-  <airport-selector airports="$ctrl.airports" on-airport-select="$ctrl.selectedStartAirportHandler(airport)"></airport-selector>
+<div class="field has-addons">
+  <div class="control-label">
+    <label class="label">Select airport:</label>
+  </div>
+  <div class="control">
+    <airport-selector airports="$ctrl.startAirports" on-airport-select="$ctrl.selectedStartAirportHandler(airport)"></airport-selector>
+  </div>
 </div>
 
 <div class="control-label">
   <label class="label">Select airport:</label>
 </div>
 <div class="control">
-  <airport-selector airports="$ctrl.airports" on-airport-select="$ctrl.selectedEndAirportHandler(airport)"></airport-selector>
+  <airport-selector airports="$ctrl.endAirports" on-airport-select="$ctrl.selectedEndAirportHandler(airport)"></airport-selector>
 </div>

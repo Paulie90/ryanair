@@ -1,7 +1,7 @@
 <div>
   <nav class="nav">
     <div class="nav-left">
-      <a class="nav-item is-brand" ui-sref="home.flight-list">
+      <a class="nav-item is-brand" ui-sref="home">
         CheapFlight
       </a>
     </div>
@@ -18,7 +18,7 @@
     <div class="nav-right nav-menu"></div>
   </nav>
   <section>
-      <flight-search></flight-search>
+      <flight-search airports="$ctrl.airports"></flight-search>
     <ui-view> </ui-view>
     <pre class="box">
 <strong>

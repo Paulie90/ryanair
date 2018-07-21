@@ -1,13 +1,6 @@
-input[type='date'] {
-  // -moz-appearance: textfield;
+@import './variables';
 
-  &::-webkit-inner-spin-button {
-    // display: none;
-    -webkit-appearance: none;
-    margin: 0;
-  }
-}
+$primary: $ryanair-blue;
 
-// datalist{
-//   display: block;
-// }
+@import '~bulma/bulma.sass';
+@import './overrides/overrides.scss'

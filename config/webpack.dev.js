@@ -9,7 +9,7 @@ module.exports = webpackMerge(commonConfig, {
   },
   module: {
     loaders: [
-      { test: /\.scss$/, loaders: ['style', 'css?sourceMap', 'postcss-loader', 'sass?config=sassLoader'] },
+      { test: /\.(sass|scss)$/, loaders: ['style', 'css?sourceMap', 'postcss-loader', 'sass?config=sassLoader'] },
     ]
   },
 });

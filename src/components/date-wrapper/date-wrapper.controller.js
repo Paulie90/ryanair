@@ -1,23 +1,23 @@
 import moment from 'moment';
 
-import { MOMENT_DISPLAY_DATE_FORMAT } from '../../app.constants';
+import { MOMENT_SERVER_DATE_FORMAT } from '../../app.constants';
 
 export default class DateWrapperController {
   startDateChanged(date) {
-    this.fromDate = moment(date);
-    this.minDate = this.fromDate.add(2, 'd').format(MOMENT_DISPLAY_DATE_FORMAT);
+    this.startDate = moment(date);
+    this.minDate = this.startDate.add(2, 'd').format(MOMENT_SERVER_DATE_FORMAT);
 
-    if (this.toDate) {
-      this.onDatesSet({ startDate: this.fromDate, endDate: this.toDate });
+    if (this.endDate) {
+      this.onDatesSet({ startDate: this.startDate, endDate: this.endDate });
     }
   }
 
   endDateChanged(date) {
-    this.toDate = moment(date);
-    this.maxDate = this.toDate.subtract(2, 'd').format(MOMENT_DISPLAY_DATE_FORMAT);
+    this.endDate = moment(date);
+    this.maxDate = this.endDate.subtract(2, 'd').format(MOMENT_SERVER_DATE_FORMAT);
 
-    if (this.fromDate) {
-      this.onDatesSet({ startDate: this.fromDate, endDate: this.toDate });
+    if (this.startDate) {
+      this.onDatesSet({ startDate: this.startDate, endDate: this.endDate });
     }
   }
 }

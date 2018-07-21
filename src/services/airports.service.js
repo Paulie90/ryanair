@@ -1,4 +1,4 @@
-import { AIRPORT_API_URL } from './services.consts';
+import { AIRPORT_API_URL_BASE } from './services.consts';
 
 export default class AirportsService {
   constructor($http) {
@@ -8,6 +8,6 @@ export default class AirportsService {
   }
 
   getAirports() {
-    return this.$http.get(AIRPORT_API_URL);
+    return this.$http.get(AIRPORT_API_URL_BASE);
   }
 }

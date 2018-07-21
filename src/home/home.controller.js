@@ -1,3 +1,1 @@
-export default class HomeController {
-
-}
+export default class HomeController {}

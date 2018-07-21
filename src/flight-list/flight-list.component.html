@@ -1,1 +1,7 @@
-TEST
+<p ng-if="$ctrl.flights.length < 1">
+  No flights found
+</p>
+
+<p ng-if="$ctrl.flights.length > 0">
+  {{$ctrl.flights | json}}
+</p>

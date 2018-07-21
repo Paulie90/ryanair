@@ -1,13 +1,17 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 
+import config from './app.config';
 import Components from './components/components.module';
 import { HomeComponent } from './home/home.component';
 import { FlightListComponent } from './flight-list/flight-list.component';
 import {
-  CheapFlightService,
+  CheapFlightsService,
   AirportsService
 } from './services';
+import {
+  ClickOutsideDirective
+} from './directives';
 
 angular.module('myApp', [
   uiRouter,
@@ -16,19 +20,6 @@ angular.module('myApp', [
   .component('homePage', HomeComponent)
   .component('flightListPage', FlightListComponent)
   .service('AirportsService', AirportsService)
-  .service('CheapFlightService', CheapFlightService)
-  .config(($locationProvider, $urlRouterProvider, $stateProvider) => {
-    'ngInject';
-
-    $urlRouterProvider.otherwise('/');
-    $locationProvider.html5Mode(true);
-    $stateProvider
-      .state('home', {
-        url: '/',
-        component: 'homePage'
-      })
-      .state('home.flight-list', {
-        url: 'flight-list',
-        component: 'flightListPage'
-      });
-  });
+  .service('CheapFlightsService', CheapFlightsService)
+  .directive('clickOutside', ClickOutsideDirective)
+  .config(config);
