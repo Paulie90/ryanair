@@ -4,6 +4,7 @@ import './flight-list.component.scss';
 
 export const FlightListComponent = {
   bindings: {
+    airports: '<',
     flights: '<'
   },
   template,

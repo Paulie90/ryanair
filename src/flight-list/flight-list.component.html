@@ -1,7 +1,46 @@
-<p ng-if="$ctrl.flights.length < 1">
+<div class="container" ng-if="$ctrl.flights.length < 1">
   No flights found
-</p>
+</div>
 
-<p ng-if="$ctrl.flights.length > 0">
-  {{$ctrl.flights | json}}
-</p>
+<div class="container" ng-if="$ctrl.flights.length > 0">
+  <div class="columns is-mobile is-centered is-vcentered">
+    <div class="column is-narrow">
+      <h2 class="title">
+        {{$ctrl.startAirport.name}}
+      </h2>
+      <h2 class="subtitle"> {{$ctrl.startAirport.country.name}} </h2>
+    </div>
+    <div class="column is-narrow">
+      <h2 class="title is-1">
+        >
+      </h2>
+    </div>
+    <div class="column is-narrow">
+      <h2 class="title">
+        {{$ctrl.endAirport.name}}
+      </h2>
+      <h2 class="subtitle"> {{$ctrl.endAirport.country.name}} </h2>
+    </div>
+  </div>
+
+  <div class="columns is-mobile is-centered is-vcentered">
+    <div class="column is-narrow">
+      <table class="table">
+        <thead>
+          <tr>
+            <th> Fly out </th>
+            <th> Fly back </th>
+            <th> Price </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="flight in ::$ctrl.flights">
+            <td>{{flight.dateFrom | date: $ctrl.displayDateFormat}}</td>
+            <td>{{flight.dateTo| date: $ctrl.displayDateFormat}}</td>
+            <td>{{flight.price | currency: flight.currency }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

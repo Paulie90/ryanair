@@ -21,8 +21,10 @@ export default class FlightSerachController {
     const params = {
       startDate: this.startDate.format(MOMENT_SERVER_DATE_FORMAT),
       startIata: this.startAirport.iataCode,
+      startAirport: this.startAirport,
       endDate: this.endDate.format(MOMENT_SERVER_DATE_FORMAT),
-      endIata: this.endAirport.iataCode
+      endIata: this.endAirport.iataCode,
+      endAirport: this.endAirport
     };
 
     this.$state.go('home.flight-list', params);

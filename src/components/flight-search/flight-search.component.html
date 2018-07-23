@@ -1,3 +1,21 @@
-<date-wrapper on-dates-set="$ctrl.setDatesHandler(startDate, endDate)"></date-wrapper>
-<airport-wrapper ng-if="$ctrl.startDate && $ctrl.endDate" airports="$ctrl.airports" on-airports-set="$ctrl.setAirportsHandler(startAirport, endAirport)"></airport-wrapper>
-<button class="button is-warning" ng-click="$ctrl.searchFlights()">Search</button>
+<div class="columns is-centered is-multiline">
+  <div class="column is-narrow is-4">
+    <date-wrapper on-dates-set="$ctrl.setDatesHandler(startDate, endDate)"></date-wrapper>
+  </div>
+
+  <div class="column is-narrow is-4">
+    <airport-wrapper airports="$ctrl.airports" on-airports-set="$ctrl.setAirportsHandler(startAirport, endAirport)"></airport-wrapper>
+  </div>
+
+  <div class="column button-column is-narrow is-1">
+    <button class="button is-warning" ng-click="$ctrl.searchFlights()" ng-disabled="!$ctrl.startDate || !$ctrl.startAirport || !$ctrl.endDate || !$ctrl.endAirport">
+      Search
+    </button>
+  </div>
+  <p>
+    START: {{$ctrl.startDate}}
+  </p>
+  <p>
+    end: {{$ctrl.endDate}}
+  </p>
+</div>

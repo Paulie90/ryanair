@@ -2,18 +2,6 @@
 
 .button {
   font-weight: 700;
-
-//   &.is-yellow {
-//   background-color: $ryanair-yellow;
-//   border-color: transparent;
-//   color: $ryanair-blue;
-
-//   &:hover {
-//     background-color: darken($ryanair-yellow, 10%) ;
-//     border-color: transparent;
-//     color: darken($ryanair-blue, 10%);
-//   }
-// }
 }
 
 .input[type='date'] {
@@ -21,4 +9,8 @@
     -webkit-appearance: none;
     margin: 0;
   }
+}
+
+.control {
+  min-width: 0;
 }

@@ -1,7 +1,9 @@
 @import '../scss/variables';
 
-.navbar-brand {
+.navbar-brand .nav-item {
   align-items: center;
+  display: flex;
+  font-weight: 700;
 }
 
 .search-container {

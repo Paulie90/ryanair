@@ -23,6 +23,11 @@ export default ($locationProvider, $urlRouterProvider, $stateProvider) => {
         flights: ($stateParams, CheapFlightsService) => {
           'ngInject';
 
+          if (!$stateParams.startDate || !$stateParams.startIata
+            || !$stateParams.endDate || !$stateParams.endIata) {
+            return [];
+          }
+
           return CheapFlightsService.getFlights($stateParams.startDate, $stateParams.startIata,
             $stateParams.endDate, $stateParams.endIata)
             .then(res => res.data.flights);
