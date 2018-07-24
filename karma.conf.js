@@ -1,6 +1,5 @@
 module.exports = function (config) {
-
-  var configuration = {
+  const configuration = {
     // base path used to resolve all patterns
     basePath: '',
 
@@ -55,17 +54,17 @@ module.exports = function (config) {
     browsers: ['Chrome'],
 
     customLaunchers: {
-        Chrome_travis_ci: {
-            base: 'Chrome',
-            flags: ['--no-sandbox']
-        }
+      Chrome_travis_ci: {
+        base: 'Chrome',
+        flags: ['--no-sandbox']
+      }
     },
 
     // if true, Karma runs tests once and exits
     singleRun: true
   };
 
-  if(process.env.TRAVIS){
+  if (process.env.TRAVIS) {
     configuration.browsers = ['Chrome_travis_ci'];
     // configuration.reporters = configuration.reporters.concat(['coverage', 'coveralls']);
     // configuration.coverageReporter = {
@@ -75,5 +74,4 @@ module.exports = function (config) {
   }
 
   config.set(configuration);
-
 };

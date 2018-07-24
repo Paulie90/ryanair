@@ -1,11 +1,11 @@
 <div class="field has-addons">
   <div class="control">
     <p class="help has-text-white is-size-6">From airport:</p>
-    <airport-selector airports="$ctrl.startAirports" on-airport-select="$ctrl.selectedStartAirportHandler(airport)"></airport-selector>
+    <airport-selector init-airport="$ctrl.initStartAirport" airports="$ctrl.startAirports" on-airport-select="$ctrl.selectedStartAirportHandler(airport)"></airport-selector>
   </div>
 
   <div class="control">
     <p class="help has-text-white is-size-6">To airport:</p>
-    <airport-selector airports="$ctrl.endAirports" on-airport-select="$ctrl.selectedEndAirportHandler(airport)"></airport-selector>
+    <airport-selector init-airport="$ctrl.initEndAirport" airports="$ctrl.endAirports" on-airport-select="$ctrl.selectedEndAirportHandler(airport)"></airport-selector>
   </div>
 </div>

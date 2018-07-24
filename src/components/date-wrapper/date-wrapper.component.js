@@ -3,7 +3,7 @@ import controller from './date-wrapper.controller';
 
 export const DateWrapperComponent = {
   bindings: {
-    onDatesSet: '&'
+    onDatesSet: '&',
   },
   template,
   controller

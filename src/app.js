@@ -13,7 +13,7 @@ import {
   ClickOutsideDirective
 } from './directives';
 
-angular.module('myApp', [
+angular.module('cheapFlight', [
   uiRouter,
   Components
 ])

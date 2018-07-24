@@ -1,5 +1,11 @@
 export default class AirportPickerController {
-  inputChangeHandler(airport) {
+  $onInit() {
+    if (this.initAirport) {
+      this.airportChangeHandler(this.initAirport);
+    }
+  }
+
+  airportChangeHandler(airport) {
     this.query = airport.name;
     this.isDropdownOpen = false;
 

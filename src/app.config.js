@@ -17,7 +17,7 @@ export default ($locationProvider, $urlRouterProvider, $stateProvider) => {
       }
     })
     .state('home.flight-list', {
-      url: 'flight-list/:startDate/:startIata/:endDate/:endIata',
+      url: 'flight-list/:startIata/:startDate/:endIata/:endDate',
       component: 'flightListPage',
       resolve: {
         flights: ($stateParams, CheapFlightsService) => {

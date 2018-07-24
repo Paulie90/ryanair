@@ -3,6 +3,22 @@ import moment from 'moment';
 import { MOMENT_SERVER_DATE_FORMAT } from '../../app.constants';
 
 export default class DateWrapperController {
+  constructor($stateParams) {
+    'ngInject';
+
+    this.$stateParams = $stateParams;
+  }
+
+  $onInit() {
+    // Get initial input values from state params
+    if (this.$stateParams.startDate) {
+      this.initStartDate = this.$stateParams.startDate;
+    }
+    if (this.$stateParams.endDate) {
+      this.initEndDate = this.$stateParams.endDate;
+    }
+  }
+
   startDateChanged(date) {
     const momentDate = moment(date);
 
@@ -31,5 +47,9 @@ export default class DateWrapperController {
     if (this.startDate) {
       this.onDatesSet({ startDate: this.startDate, endDate: this.endDate });
     }
+  }
+
+  setDate(date) {
+    this.setDateCallback({ date });
   }
 }
