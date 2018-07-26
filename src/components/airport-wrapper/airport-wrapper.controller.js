@@ -22,8 +22,7 @@ export default class AirportWrapperController {
   selectedStartAirportHandler(airport) {
     this.startAirport = airport;
 
-    this.endAirports = this.airports.slice();
-    this.endAirports = this.endAirports.filter(port => port.name !== airport.name);
+    this.endAirports = this.airports.filter(port => this.routes[airport.iataCode].includes(port.iataCode));
 
     if (this.endAirport) {
       this.onAirportsSet({
@@ -36,8 +35,7 @@ export default class AirportWrapperController {
   selectedEndAirportHandler(airport) {
     this.endAirport = airport;
 
-    this.startAirports = this.airports.slice();
-    this.startAirports = this.endAirports.filter(port => port !== airport);
+    this.startAirports = this.airports.filter(port => port !== airport);
 
     if (this.startAirport) {
       this.onAirportsSet({

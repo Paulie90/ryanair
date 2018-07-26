@@ -47,7 +47,7 @@ module.exports = {
       }
     ]
   },
-  devtool: 'source-map',
+  devtool: 'inline-source-map',
   resolve: {
     // add alias for application code directory
     // alias: {

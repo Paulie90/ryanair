@@ -1,4 +1,4 @@
-<input class="input" type="text" placeholder="Select airport" ng-focus="$ctrl.isDropdownOpen=true" ng-model="$ctrl.query"
+<input class="input" type="text" placeholder="Select airport" ng-focus="$ctrl.inputFocusHandler()" ng-model="$ctrl.query"
   click-outside="$ctrl.isDropdownOpen=false">
 
 <div class="dropdown" ng-class="{ 'is-active': $ctrl.isDropdownOpen }" click-outside="$ctrl.isDropdownOpen=false">

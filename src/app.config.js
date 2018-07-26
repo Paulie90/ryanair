@@ -12,7 +12,7 @@ export default ($locationProvider, $urlRouterProvider, $stateProvider) => {
           'ngInject';
 
           return AirportsService.getAirports()
-            .then(res => res.data.airports);
+            .then(res => res.data);
         }
       }
     })

@@ -5,10 +5,10 @@ module.exports = function (config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['mocha', 'chai'],
+    frameworks: ['mocha', 'chai', 'sinon'],
 
     // list of files/patterns to load in the browser
-    files: [{ pattern: 'spec.bundle.js', watched: false }],
+    files: ['spec.bundle.js'],
 
     // files to exclude
     exclude: [],
@@ -17,17 +17,7 @@ module.exports = function (config) {
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: { 'spec.bundle.js': ['webpack', 'sourcemap'] },
 
-    webpack: {
-      devtool: 'inline-source-map',
-      module: {
-        loaders: [
-          { test: /\.js/, exclude: [/app\/lib/, /node_modules/], loader: 'babel' },
-          { test: /\.html/, loader: 'raw' },
-          { test: /\.styl$/, loader: 'style!css!stylus' },
-          { test: /\.css$/, loader: 'style!css' }
-        ]
-      }
-    },
+    webpack: require('./config/webpack.dev.js'),
 
     webpackServer: {
       noInfo: true // prevent console spamming when running in Karma!

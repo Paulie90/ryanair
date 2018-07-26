@@ -48,8 +48,4 @@ export default class DateWrapperController {
       this.onDatesSet({ startDate: this.startDate, endDate: this.endDate });
     }
   }
-
-  setDate(date) {
-    this.setDateCallback({ date });
-  }
 }

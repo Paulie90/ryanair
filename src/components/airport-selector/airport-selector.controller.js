@@ -1,8 +1,13 @@
-export default class AirportPickerController {
+export default class AirportSelectorController {
   $onInit() {
     if (this.initAirport) {
       this.airportChangeHandler(this.initAirport);
     }
+  }
+
+  inputFocusHandler() {
+    this.isDropdownOpen = true;
+    this.query = '';
   }
 
   airportChangeHandler(airport) {
@@ -13,6 +18,10 @@ export default class AirportPickerController {
   }
 
   filterAirports(query) {
-    return airport => !!query && airport.name.toLowerCase().includes(query.toLowerCase());
+    if (!query) {
+      return true;
+    }
+
+    return airport => airport.name.toLowerCase().includes(query.toLowerCase());
   }
 }

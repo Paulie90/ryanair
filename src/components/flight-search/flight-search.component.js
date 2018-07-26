@@ -5,6 +5,7 @@ import './flight-search.component.scss';
 export const FlightSearchComponent = {
   bindings: {
     airports: '<',
+    routes: '<',
     onDateChange: '&'
   },
   template,

@@ -1,6 +1,6 @@
 import { MOMENT_SERVER_DATE_FORMAT } from '../../app.constants';
 
-export default class FlightSerachController {
+export default class FlightSearchController {
   constructor($state) {
     'ngInject';
 
